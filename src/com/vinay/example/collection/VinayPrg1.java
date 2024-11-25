@@ -1,4 +1,4 @@
-package com.vinay.example;
+package com.vinay.example.collection;
 
 import java.util.Arrays;
 import java.util.List;
