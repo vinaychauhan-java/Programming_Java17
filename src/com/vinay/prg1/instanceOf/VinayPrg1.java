@@ -14,7 +14,7 @@ final class Car extends Vehicle {
     }
 }
 
-// Permitted sSubclass
+// Permitted Subclass
 final class Truck extends Vehicle {
     @Override
     public void displayType() {
@@ -28,7 +28,7 @@ public class VinayPrg1 {
         Object obj = new Car();
 
         // An enhanced instanceOf operator allows you to pattern match and
-        // eliminates the extra line of code that was required earlier to perform casts:
+        // eliminates the extra line of code that was required earlier to perform casts
         if (obj instanceof Car carObj) {
             carObj.displayType();
         }
