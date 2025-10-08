@@ -6,6 +6,9 @@ sealed class Vehicle permits Car, Truck {
     }
 }
 
+/**
+ * All sealed class subclasses must either be final, sealed or non-sealed
+ */
 // Permitted Subclass
 final class Car extends Vehicle {
     @Override
@@ -15,10 +18,17 @@ final class Car extends Vehicle {
 }
 
 // Permitted Subclass
-final class Truck extends Vehicle {
+non-sealed class Truck extends Vehicle {
     @Override
     public void displayType() {
         System.out.println("This is a Truck");
+    }
+}
+
+class MiniTruck extends Truck {
+    @Override
+    public void displayType() {
+        System.out.println("This is a MiniTruck");
     }
 }
 
@@ -26,11 +36,15 @@ public class VinayPrg1 {
 
     public static void main(String[] args) {
         Object obj = new Car();
-
         // An enhanced instanceOf operator allows you to pattern match and
         // eliminates the extra line of code that was required earlier to perform casts
         if (obj instanceof Car carObj) {
             carObj.displayType();
+        }
+
+        Vehicle vehicle = new MiniTruck();
+        if (vehicle instanceof MiniTruck miniTruck) {
+            miniTruck.displayType();
         }
     }
 }
